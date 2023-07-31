@@ -6,11 +6,11 @@ function NavBar() {
     <nav className="navbar">
       <img src={Logo} alt="Logo marca" className="logo" />
       <div className="links">
-        <button className="btn">Mujer</button>
-        <button className="btn">Hombre</button>
-        <button className="btn">Niños</button>
+        <a href="">Hombre</a>
+        <a href="">Mujer</a>
+        <a href="">Niños</a>
       </div>
-      <CartWidget/>
+      <CartWidget />
     </nav>
   );
 }

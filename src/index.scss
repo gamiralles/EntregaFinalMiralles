@@ -1,27 +1,46 @@
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  .logo {
+    width: 200px;
+    height: 200px;
+  }
+  .carrito {
+    width: 50px;
+    height: 50px;
+  }
+  .links {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 100px;
-    margin-right: 100px;
-    .logo {
-        width: 200px;
-        height: 200px;
+    a {
+      background-color: darkseagreen;
+      color: white;
+      padding: 10px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      margin: 10px;
+      font-family: sans-serif;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 5px;
+      border-color: black;
     }
-    .carrito {
-        width: 50px;
-        height: 50px;
-    }
-    .links {
-        display: flex;
-        .btn {
-            display: flex;
-            margin-right: 10px;
-        }
-    }
+  }
 }
 
 .saludo {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: medium;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: small;
 }
