@@ -1,9 +1,24 @@
-function ItemListContainer({greeting}) {
-  return (
-    <div className="saludo">
-        <h1> {greeting} </h1>
-    </div>
-  )
-}
+import React from "react";
+import { useState, useEffect } from "react";
+import { getProducts } from "../../asyncMocks";
+import ItemList from "../ItemList/ItemList";
 
-export default ItemListContainer
+const ItemListContainer = ({ greeting }) => {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    getProducts().then((respuesta) => {
+      setProductos(respuesta);
+    });
+  }, []);
+
+  return (
+    <div>
+      <h2 className="greeting">{greeting}</h2>
+
+      <ItemList productos={productos} />
+    </div>
+  );
+};
+
+export default ItemListContainer;
