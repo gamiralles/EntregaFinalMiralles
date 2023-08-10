@@ -2,9 +2,8 @@ const Item = ({ img, name, category, price }) => {
   return (
     <div className="item">
       <img src={img} />
-      <h2>{name}</h2>
-      <p>{category}</p>
-      <h2>${price}</h2>
+      <h3>{name}</h3>
+      <a href="">Ver Detalles</a>
     </div>
   );
 };

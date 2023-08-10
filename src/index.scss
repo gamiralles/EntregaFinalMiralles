@@ -1,32 +1,46 @@
 .navbar {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-left: 100px;
-  margin-right: 100px;
+  background-color: #f2f2f2;
   .logo {
-    width: 200px;
-    height: 200px;
+    margin-left: 20px;
+    img {
+      width: 150px;
+      height: 150px;
+    }
   }
-  .carrito {
-    width: 50px;
-    height: 50px;
-  }
-  .links {
+  .carrolinks {
     display: flex;
-    a {
-      background-color: darkseagreen;
-      color: white;
-      padding: 10px 25px;
-      text-align: center;
-      text-decoration: none;
+    justify-items: center;
+    align-items: center;
+
+    .links {
       display: flex;
-      margin: 10px;
-      font-family: sans-serif;
-      border-style: solid;
-      border-width: 1px;
-      border-radius: 5px;
-      border-color: black;
+      a {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-family: sans-serif;
+        font-weight: 700;
+        font-variant: inherit;
+        font-size: small;
+        color: black;
+        text-decoration: none;
+      }
+    }
+
+    .carrito {
+      display: flex;
+      flex-direction: row;
+      margin-right: 20px;
+      margin-left: 100px;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 35px;
+        height: 35px;
+      }
     }
   }
 }
@@ -47,12 +61,54 @@
 
 .itemlist {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   justify-content: center;
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: #F2F2F2;
   img {
     width: 300px;
+  }
+  h3 {
+    font-family: sans-serif;
+    font-size: medium;
+    font-weight: 600;
+    margin: auto;
+  }
+  a {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: small;
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.contador {
+  .controles {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    .button {
+      margin: 20px;
+    }
+  }
+  .agregar {
+    display: flex;
+    justify-content: center;
+    margin: auto;
   }
 }

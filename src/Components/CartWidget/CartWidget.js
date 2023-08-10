@@ -2,9 +2,9 @@ import Carrito from "../../Assets/shopping-cart.png"
 
 function CartWidget() {
   return (
-    <div>
-        <img src={Carrito} alt="Carrito" className="carrito"/>
-        0
+    <div className="carrito">
+        <img src={Carrito} alt="Carrito"/>
+        <p>0</p>
     </div>
   )
 }

@@ -4,13 +4,20 @@ import CartWidget from "../CartWidget/CartWidget";
 function NavBar() {
   return (
     <nav className="navbar">
-      <img src={Logo} alt="Logo marca" className="logo" />
-      <div className="links">
-        <a href="">Hombre</a>
-        <a href="">Mujer</a>
-        <a href="">Niños</a>
+      <div className="logo">
+        <img src={Logo} alt="Logo marca"/>
       </div>
-      <CartWidget />
+      <div className="carrolinks">
+        <div className="links">
+          <a href="">AIR MAX</a>
+          <a href="">AIR FORCE</a>
+          <a href="">DUNK</a>
+          <a href="">JORDAN</a>
+        </div>
+        <div>
+          <CartWidget />
+        </div>
+      </div>
     </nav>
   );
 }
