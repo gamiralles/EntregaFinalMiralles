@@ -1,16 +1,17 @@
 import NavBar from "./Components/NavBar/NavBar";
 import ItemListContainer from "./Components/itemListContainer/ItemListContainer";
-import Footer from "./Components/Footer/Footer"
-import ItemCount from "./Components/itemCount/ItemCount";
+import Footer from "./Components/Footer/Footer";
+import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
+
 
 function App() {
   return (
-    <>
+    <div className="app">
       <NavBar />
-      <ItemListContainer greeting={`Bienvenidos a Sneakers.GG`} />
-      <ItemCount inicial={1} stock={10} onAdd={(cantidad) => console.log(`cantidad`, cantidad)}/>
-      <Footer/>
-    </>
+      <ItemListContainer greeting={`Bienvenidos`} />
+      <ItemDetailContainer />
+      <Footer />
+    </div>
   );
 }
 

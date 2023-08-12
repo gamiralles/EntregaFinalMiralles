@@ -63,7 +63,7 @@ const productos = [
     description: "",
   },
   {
-    id: "4",
+    id: "8",
     name: "Nike Jordan Air 200",
     price: 42000,
     category: "Jordan",
@@ -74,9 +74,17 @@ const productos = [
 ];
 
 export const getProducts = () => {
-  return new Promise((respuesta) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
-      respuesta(productos);
+      resolve(productos);
     }, 1000);
   });
 };
+
+export const getProductById = (productId) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(productos.find(prod => prod.id === productId))
+    }, 1000)
+  })
+}
