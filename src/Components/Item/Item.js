@@ -1,9 +1,11 @@
-const Item = ({ img, name }) => {
+import { Link } from "react-router-dom";
+
+const Item = ({ id, img, name }) => {
   return (
     <div className="item">
       <img src={img} />
       <h3>{name}</h3>
-      <a href="">Ver Detalles</a>
+      <Link to={`item/${id}`}>Ver Detalle</Link>
     </div>
   );
 };

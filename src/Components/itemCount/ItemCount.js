@@ -11,7 +11,7 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
   };
 
   const quitar = () => {
-    if (cantidad > 1) setCantidad(cantidad - 1);
+    if (cantidad > 0) setCantidad(cantidad - 1);
   };
 
   return (

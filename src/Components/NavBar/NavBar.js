@@ -1,18 +1,21 @@
 import Logo from "../../Assets/LogoS.png";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src={Logo} alt="Logo marca"/>
+        <Link to={"/"}>
+          <img src={Logo} alt="Logo marca" />
+        </Link>
       </div>
       <div className="carrolinks">
         <div className="links">
-          <a href="">AIR MAX</a>
-          <a href="">AIR FORCE</a>
-          <a href="">DUNK</a>
-          <a href="">JORDAN</a>
+          <Link to={"/category/Air-Max"}>AIR MAX</Link>
+          <Link to={"/category/Air-Force"}>AIR FORCE</Link>
+          <Link to={"/category/Dunk"}>DUNK</Link>
+          <Link to={"/category/Jordan"}>JORDAN</Link>
         </div>
         <div>
           <CartWidget />
