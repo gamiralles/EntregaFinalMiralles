@@ -1,10 +1,11 @@
 import ItemCount from "../itemCount/ItemCount";
 
-const ItemDetail = ({ name, img, price, category, stock, description }) => {
+const ItemDetail = ({ name, img, imga, price, category, stock, description }) => {
   return (
     <div className="contenedor">
       <div className="image">
         <img src={img} />
+        <img src={imga} />
       </div>
       <div className="detail">
         <h1>{name}</h1>
