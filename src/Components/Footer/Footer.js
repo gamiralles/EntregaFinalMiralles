@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <div className="footer">
-      <h5>Miralles Gaston &copy;2023</h5>
+      <h5>Copyright  &copy; 2023 Miralles Gaston</h5>
     </div>
   );
 }

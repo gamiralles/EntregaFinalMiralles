@@ -1,6 +1,6 @@
 import NavBar from "./Components/NavBar/NavBar";
-import ItemListContainer from "./Components/itemListContainer/ItemListContainer";
 import Footer from "./Components/Footer/Footer";
+import ItemListContainer from "./Components/itemListContainer/ItemListContainer";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-        <Route path="/" element={<ItemListContainer greeting={`Bienvenidos`}/>}/>
+        <Route path="/" element={<ItemListContainer/>}/>
         <Route path="category/:categoryId" element={<ItemListContainer />}/>
         <Route path="item/:itemId" element={<ItemDetailContainer />}/>
         <Route path="category/:categoryId/item/:itemId" element={<ItemDetailContainer />}/>

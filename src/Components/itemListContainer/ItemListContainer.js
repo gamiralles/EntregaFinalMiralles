@@ -1,27 +1,47 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { getProducts, getProductByCategory } from "../../asyncMocks";
 import ItemList from "../ItemList/ItemList";
+import { getProducts, getProductByCategory } from "../../asyncMocks";
 import { useParams } from "react-router-dom";
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [productos, setProductos] = useState([]);
 
   const { categoryId } = useParams();
 
-  useEffect(() => {
+  const asyncFunction = categoryId ? getProductByCategory : getProducts;
 
-    const asyncFunction = categoryId ? getProductByCategory : getProducts
-    
+  useEffect(() => {
+    setLoading(true);
+
     asyncFunction(categoryId)
-    .then(response => {
-      setProductos(response)
-    })
+      .then((response) => {
+        setProductos(response);
+      })
+      .catch((error) => {
+        setError(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, [categoryId]);
+
+  if (loading) {
+    return (
+      <div className="spinnerContainer">
+        <div className="spinner"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return <h1>404 NOT FOUND</h1>;
+  }
 
   return (
     <div>
-      <h2 className="greeting">{greeting}</h2>
       <ItemList productos={productos} />
     </div>
   );
