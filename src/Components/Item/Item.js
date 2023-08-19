@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const Item = ({ id, img, name }) => {
+  const nav = useNavigate()
   return (
-    <div className="item">
+    <div className="item" onClick={() => nav(`/item/${id}`)}>
       <img src={img} />
       <h3>{name}</h3>
-      <Link to={`item/${id}`}>Ver Detalle</Link>
     </div>
   );
 };
