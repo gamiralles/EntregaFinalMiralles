@@ -3,8 +3,11 @@ import ItemList from "../ItemList/ItemList";
 import { getProducts, getProductByCategory } from "../../asyncMocks";
 import { useParams } from "react-router-dom";
 import { useAsync } from "../Hooks/useAsync";
+import ItemGrid from "../ItemGrid/ItemGrid";
+import { useState } from "react";
 
 const ItemListContainer = () => {
+  const [displayGrid, setDisplayGrid] = useState(false);
 
   const { categoryId } = useParams();
 
@@ -20,8 +23,8 @@ const ItemListContainer = () => {
 
   if (loading) {
     return (
-      <div className="spinnerContainer">
-        <div className="spinner"></div>
+      <div className="loaderContainer">
+        <span className="loader"></span>
       </div>
     );
   }
@@ -32,7 +35,15 @@ const ItemListContainer = () => {
 
   return (
     <div>
-      <ItemList productos={productos} />
+      <div className="botones">
+        <button onClick={() => setDisplayGrid(false)}>■■■</button>
+        <button onClick={() => setDisplayGrid(true)}>≡≡≡­­­</button>
+      </div>
+      {displayGrid ? (
+        <ItemList productos={productos} />
+      ) : (
+        <ItemGrid productos={productos} />
+      )}
     </div>
   );
 };

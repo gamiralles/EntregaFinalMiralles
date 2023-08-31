@@ -1,6 +1,35 @@
+import { useState } from "react";
+import { useCart } from "../Context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
-const ItemDetail = ({ name, img, imga, price, category, stock, description }) => {
+const ItemDetail = ({
+  id,
+  name,
+  img,
+  imga,
+  price,
+  category,
+  stock,
+  description,
+}) => {
+  const [quantity, setQuantity] = useState(0);
+
+  const { addItem } = useCart();
+
+  const handleOnAdd = (quantity) => {
+    console.log(quantity);
+    setQuantity(quantity);
+
+    const objProduct = {
+      id,
+      name,
+      price,
+      quantity,
+    };
+
+    addItem(objProduct);
+  };
   return (
     <div className="contenedor">
       <div className="image">
@@ -14,12 +43,10 @@ const ItemDetail = ({ name, img, imga, price, category, stock, description }) =>
         <h6>{description}</h6>
         <h6>stock:{stock}</h6>
         <div className="carritoDetail">
-        <ItemCount
-          inicial={0}
-          stock={stock}
-          onAdd={(cantidad) => console.log("cantidad Agregada", cantidad)}
-          />
-          </div>
+          {quantity == 0 ? (
+            stock > 0 ? ( <ItemCount stock={stock} onAdd={handleOnAdd} />
+            ) : (<p>No hay stock del producto</p>)) : (<button className="button">Finalizar Compra</button>)}
+        </div>
       </div>
     </div>
   );

@@ -13,8 +13,8 @@ const ItemDetailContainer = () => {
 
   if (loading) {
     return (
-      <div className="spinnerContainer">
-        <div className="spinner"></div>
+      <div className="loaderContainer">
+        <span className="loader"></span>
       </div>
     );
   }
