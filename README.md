@@ -1,4 +1,26 @@
+# EcommerceNike
 
-Link video de navegacion
+This product is being built
 
-https://drive.google.com/file/d/1JEAP23UEzBJ1PKTcFwefvpInBPYBegRa/view?usp=sharing
+## Running Locally
+
+```bash
+$ git clone https://github.com/gamiralles/EntregaFinalMiralles.git
+$ cd EcommerceNike
+$ npm install
+$ npm start
+```
+
+## Environment Variables
+
+See [`.env.example`](https://github.com/gamiralles/EntregaFinalMiralles.git) for an example.
+
+## Built Using
+
+- [Create-React-App](https://create-react-app.dev/)
+- [Vercel](https://vercel.com)
+- [Firebase](https://firebase.com)
+
+## Test App 
+
+[Deploy]()

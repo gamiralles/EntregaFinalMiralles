@@ -107,30 +107,6 @@
   animation: itemListAnim 0.8s linear 0s 1 reverse none;
 }
 
-.itemlist {
-  justify-content: start;
-  align-content: start;
-  justify-items: start;
-
-  .item {
-    display: flex;
-    margin: 2em 2em 2em 2em;
-    // background-color: #bababb;
-    // box-shadow: 20px 20px 50px lightgray;
-    color: #474478;
-    max-width: 50vh;
-    img {
-      width: 100px;
-    }
-    h3 {
-      font-family: "Quicksand";
-      font-size: larger;
-      font-weight: 600;
-      margin: 2em 2em 2em 2em;
-    }
-  }
-  animation: itemListAnim 0.8s linear 0s 1 reverse none;
-}
 
 // Contador y agregar al carrito
 
