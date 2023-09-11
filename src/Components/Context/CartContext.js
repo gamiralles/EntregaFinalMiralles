@@ -6,8 +6,19 @@ const CartContext = createContext({
   cart: [],
 });
 
-const notify = () =>
-  toast.warn("Ya se encuentra agregado!", {
+// const notify = () =>
+//   toast.warn("Ya se encuentra agregado!", {
+//     position: "top-center",
+//     autoClose: 1000,
+//     hideProgressBar: false,
+//     closeOnClick: false,
+//     pauseOnHover: false,
+//     draggable: true,
+//     theme: "light",
+//   });
+
+const notify = (type, text) =>
+  toast[type](text, {
     position: "top-center",
     autoClose: 1000,
     hideProgressBar: false,
@@ -26,9 +37,10 @@ export const CartProvider = ({ children }) => {
         console.log(prev);
         return [...prev, productToAdd];
       });
+      notify("success", `Se agrego correctamente`);
     } else {
       console.error("Ya esta agregado");
-      notify();
+      notify("warn", `Ya esta agregado`);
     }
   };
 
