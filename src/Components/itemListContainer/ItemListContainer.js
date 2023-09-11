@@ -1,25 +1,24 @@
 import React from "react";
 import ItemList from "../ItemList/ItemList";
-import { getProducts, getProductByCategory } from "../../asyncMocks";
 import { useParams } from "react-router-dom";
 import { useAsync } from "../Hooks/useAsync";
 import ItemGrid from "../ItemGrid/ItemGrid";
 import { useState } from "react";
+
+import { getProducts } from "../../Service/Firebase/Firestore/products";
 
 const ItemListContainer = () => {
   const [displayGrid, setDisplayGrid] = useState(false);
 
   const { categoryId } = useParams();
 
-  const asyncFunction = categoryId
-    ? () => getProductByCategory(categoryId)
-    : () => getProducts();
+  const getProductCategory = () => getProducts(categoryId)
 
   const {
     data: productos,
     error,
     loading,
-  } = useAsync(asyncFunction, [categoryId]);
+  } = useAsync(getProductCategory, [categoryId]);
 
   if (loading) {
     return (

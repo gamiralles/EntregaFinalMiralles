@@ -1,15 +1,14 @@
-import React from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { getProductById } from "../../asyncMocks";
+import { getProduct } from "../../Service/Firebase/Firestore/products";
 import { useParams } from "react-router-dom";
 import { useAsync } from "../Hooks/useAsync";
 
 const ItemDetailContainer = () => {
   const { itemId } = useParams();
 
-  const asyncFunction = () => getProductById(itemId);
+  const getProdcutById = () => getProduct(itemId);
 
-  const { data: product, error, loading } = useAsync(asyncFunction, [itemId]);
+  const { data: product, loading, error } = useAsync(getProdcutById, [itemId]);
 
   if (loading) {
     return (
@@ -19,8 +18,8 @@ const ItemDetailContainer = () => {
     );
   }
 
-  if (error) {
-    return <h1>404 NOT FOUND</h1>;
+  if(error) {
+    return <h1>404 NOT FOUND</h1>
   }
 
   return (

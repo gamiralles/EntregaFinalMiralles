@@ -24,6 +24,7 @@ const ItemDetail = ({
     const objProduct = {
       id,
       name,
+      img,
       price,
       quantity,
     };
@@ -44,8 +45,16 @@ const ItemDetail = ({
         <h6>stock:{stock}</h6>
         <div className="carritoDetail">
           {quantity == 0 ? (
-            stock > 0 ? ( <ItemCount stock={stock} onAdd={handleOnAdd} />
-            ) : (<p>No hay stock del producto</p>)) : (<button className="button">Finalizar Compra</button>)}
+            stock > 0 ? (
+              <ItemCount stock={stock} onAdd={handleOnAdd} />
+            ) : ( 
+              <h4>Sin Stock</h4>
+            )
+          ) : (
+            <Link to="/cart">
+              <button className="button">Ir al Carrito</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

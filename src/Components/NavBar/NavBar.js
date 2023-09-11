@@ -1,7 +1,6 @@
 import Logo from "../../Assets/Brand-ecommerce.webp";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
-import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 
 function NavBar() {
 
@@ -18,7 +17,6 @@ function NavBar() {
           <Link to={"/category/Air-Force"}>AIR FORCE</Link>
           <Link to={"/category/Dunk"}>DUNK</Link>
           <Link to={"/category/Jordan"}>JORDAN</Link>
-          <ThemeSwitch/>
         </div>
         <div>
           <CartWidget />
