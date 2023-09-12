@@ -6,7 +6,7 @@ This product is being built
 
 ```bash
 $ git clone https://github.com/gamiralles/EntregaFinalMiralles.git
-$ cd EcommerceNike
+$ cd EntregaFinalMiralles
 $ npm install
 $ npm start
 ```
