@@ -31,7 +31,6 @@ const ItemListContainer = () => {
 
   return (
     <div>
-      <h6>EcommerceNike</h6>
       <ItemGrid productos={productos}/>
     </div>
   );
