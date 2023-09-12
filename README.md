@@ -13,7 +13,7 @@ $ npm start
 
 ## Environment Variables
 
-See [`.env.example`](https://github.com/gamiralles/EntregaFinalMiralles.git) for an example.
+See [`.env.example`](https://github.com/gamiralles/EntregaFinalMiralles/blob/main/src/.env.example) for an example.
 
 ## Built Using
 
