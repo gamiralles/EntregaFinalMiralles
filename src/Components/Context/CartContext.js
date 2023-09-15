@@ -6,17 +6,6 @@ const CartContext = createContext({
   cart: [],
 });
 
-// const notify = () =>
-//   toast.warn("Ya se encuentra agregado!", {
-//     position: "top-center",
-//     autoClose: 1000,
-//     hideProgressBar: false,
-//     closeOnClick: false,
-//     pauseOnHover: false,
-//     draggable: true,
-//     theme: "light",
-//   });
-
 const notify = (type, text) =>
   toast[type](text, {
     position: "top-center",
